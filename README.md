@@ -399,4 +399,43 @@ in order. Typically this is the higher order construction that is registered int
 }
 ```
 
- 
+
+ 1
+
+Add a new rule condition
+Extend the rule engine to support a new condition for checking whether an order total exceeds a specified threshold.
+- Inspect the existing rule format and evaluation flow.
+- Implement the smallest change.
+- Add tests for values above, equal to, and below the threshold.
+
+
+
+2
+
+Support multiple conditions
+Allow a rule to require two conditions to be true using AND.
+- Preserve existing single-condition rules.
+- Test both true, one false, and both false.
+- Keep the evaluation logic readable.
+
+
+
+3
+
+Handle missing data safely
+Decide how rules should behave when an order field is missing or has an unexpected type.
+- Follow existing error-handling conventions.
+- Avoid silently accepting invalid data.
+- Add focused regression tests.
+
+
+
+4
+
+Add rule priority
+Allow rules to have a priority so higher-priority rules execute first.
+- Preserve the existing behavior when priorities are absent.
+- Define what happens when priorities are equal.
+- Test execution order and conflicting outcomes.
+
+- 
